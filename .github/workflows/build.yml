@@ -19,8 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # Yahan humne v3 ko v4 se replace kiya hai aur tools wali error fix ki hai
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools'
 
       - name: Generate Gradle Wrapper
         run: gradle wrapper --gradle-version 8.2
